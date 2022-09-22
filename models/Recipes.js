@@ -30,7 +30,7 @@ Recipes.init(
     ingredient_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'ingredient',
+        model: 'ingredients',
         key: 'id',
       },
     },

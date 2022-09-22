@@ -4,44 +4,44 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // Initialize Product model (table) by extending off Sequelize's Model class
-class Recipes extends Model { }
+class Recipes extends Model {}
 
 // set up fields and rules for Product model
 Recipes.init(
-    {
-        id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true,
-        },
-        recipe_name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        user_id: {
-            type: DataTypes.INTEGER,
-            allownull: false,
-            references: {
-                model: 'user',
-                key: 'id',
-            },
-        },
-        ingredient_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'ingredient',
-                key: 'id',
-            },
-        },
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
     },
-    {
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'recipe',
-    }
+    recipe_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      allownull: false,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
+    ingredient_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'ingredient',
+        key: 'id',
+      },
+    },
+  },
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'recipe',
+  }
 );
 
-module.exports = Product;
+module.exports = Recipes;

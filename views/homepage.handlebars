@@ -1,0 +1,68 @@
+       <!-- Local stylesheet -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+   <header>
+    <div class="container-fluid">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg navbar-dark ">
+            <h1 class="display-2">SEARED</h1>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                {{#if logged_in}}
+                <li class="nav-item active">
+                  <a class="nav-link" id="logout">Log Out <span class="sr-only"></span></a>
+                </li>
+                {{/if}}
+                <li class="nav-item active">
+                  <a class="nav-link" href="/login">Login <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="/sign-up">Sign Up <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Random Recipe <span class="sr-only"></span></a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div id="slogan"><h2 class="display-3">Dinner</h2><h2 class="display-3">Made</h2><h2 class="display-3">Easy</h2></div>
+        </div>
+      </div>
+    </div>
+    </header>
+    <main>
+      <div class="container-fluid text-center">
+      <h1>What is Seared?</h1>
+      <p>We are here to sovle the age old question of "Whats for dinner?". Seared was created by three website devlopers from Kansas city. There is nothing like KC bbq so who better to make this site than us? Recipes are curtosy of one of our devs, Matthew Tierney. We want to provide good recipes and an even better website. </p>
+      <div class="card mx-auto grow" id="random-card">
+        <div class="card-body">
+          <i class="fa-solid fa-dice"></i>
+          <h4>Find Random Recipe</h4>
+        </div>
+      </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container-fluid" id="footer">
+        <div class="row">
+          <div class="col-md-6">
+            <h1 class="display-4">SEARED</h1>
+            <h5>Good food. Good people.</h5>
+          </div>
+          <div class="col-md-6" id="footer-links">
+             <a href="https://github.com/tierney9" target="_blank"><i class="fa-brands fa-square-github"></i>Matthew Tierney</a> <br>
+             <a href="https://github.com/SteveWeed79" target="_blank"><i class="fa-brands fa-square-github"></i>Steve Weed</a> <br>
+             <a href="https://github.com/johnathanmann" target="_blank"><i class="fa-brands fa-square-github"></i>Johnathan Mann</a> <br>
+          </div>
+        </div>
+    </footer>
+
+    {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}

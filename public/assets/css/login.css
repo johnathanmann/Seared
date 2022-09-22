@@ -1,0 +1,99 @@
+:root{
+    --black: #181313;
+    --white: #e4e1e1;
+    --light: #be1000;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-image: linear-gradient(to right, var(--light) , var(--light), var(--black),var(--black), var(--black));
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#credentials h1{
+    margin: 150px 0px 0px 30px;
+    color: var(--white);
+}
+
+#credentials form{
+    margin: 40px 0px 0px 30px;
+}
+
+input{
+    width: 90%;
+}
+
+#credentials label{
+    font-size: x-large;
+    color: var(--white);
+}
+
+#credentials input{
+    border: none;
+    border-radius: 10px;
+}
+
+#credentials .btn{
+    background-color: var(--white);
+    color: var(--light);
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    width: 10rem;
+}
+
+#users{
+    margin-top: 100px;
+    text-align: center;
+}
+
+#users h1{
+    margin: 150px 0px 0px 0px;
+    color: var(--white);
+}
+
+#users h5{
+    padding: 20px;
+    color: white;
+}
+
+#users .btn{
+    background-color: var(--white);
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    width: 10rem;
+    color: var(--black);
+}
+
+@media (max-width: 570px){
+    body{
+        background-image: linear-gradient(to bottom, var(--light),var(--light),var(--black), var(--black));
+    }
+
+    input{
+        width: 80%;
+    }
+    #credentials h1{
+        margin: 50px 0px 0px 30px;
+
+    }
+    #users{
+        text-align: left;
+        margin-top: 25px;
+    }
+    #users h1{
+        margin: 50px 0px 0px 30px;
+
+    }
+    #users .btn{
+        margin: 0px 0px 50px 30px;
+    }
+    #users h5{
+        padding-left: 30px;
+        color: white;
+    }
+    
+
+}

@@ -20,7 +20,7 @@ Recipes.init(
       allowNull: false,
     },
     time: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     description: {

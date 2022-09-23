@@ -52,4 +52,4 @@ document
   .querySelector('.signup-form')
   .addEventListener('submit', signupFormHandler);
 
-  module.exports = router;
+module.exports = router;

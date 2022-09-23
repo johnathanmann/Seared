@@ -4,10 +4,10 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // Initialize Product model (table) by extending off Sequelize's Model class
-class Comments extends Model {}
+class Ingredients extends Model {}
 
-// set up fields and rules for Comments model
-Comments.init(
+// set up fields and rules for Ingredients model
+Ingredients.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -15,17 +15,21 @@ Comments.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    comment_text: {
-      type: DataTypes.TEXT,
-      allowNull: false,
+    ingredient: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
-    user_id: {
+    recipe_id: {
       type: DataTypes.INTEGER,
-      allownull: false,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
+      allowNull: true,
+    },
+    amount: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    unit_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
     },
   },
   {
@@ -33,8 +37,8 @@ Comments.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'comments',
+    modelName: 'ingredients',
   }
 );
 
-module.exports = Comments;
+module.exports = Ingredients;

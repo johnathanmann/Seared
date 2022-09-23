@@ -6,7 +6,7 @@ const sequelize = require('../config/connection');
 // Initialize Product model (table) by extending off Sequelize's Model class
 class Recipes extends Model {}
 
-// set up fields and rules for Product model
+// set up fields and rules for Recipes model
 Recipes.init(
   {
     id: {
@@ -15,7 +15,15 @@ Recipes.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    recipe_name: {
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    time: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    description: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -40,7 +48,7 @@ Recipes.init(
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'recipe',
+    modelName: 'recipes',
   }
 );
 

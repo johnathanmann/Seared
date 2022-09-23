@@ -1,8 +1,6 @@
 const router = require('express').Router();
-const { Recipes } = require('../../models/Recipes');
+const { User } = require('../../models');
 
-var randomId = Math.floor(Math.random() * 5) + 1;
-console.log(randomId)
 router.get('/', async (req, res) => {
   // pull all recipes
   try {
@@ -15,19 +13,16 @@ router.get('/', async (req, res) => {
   }
 });
 
-// route to get one recipe
-router.get('/api/recipes', async (req, res) => {
-  try{ 
-      const randomRecipe = await Recipes.findByPk(randomId);
-      if(!randomRecipe) {
-          res.status(404).json({message: 'No recipe with this id!'});
-          return;
-      }
-      const recipe = randomRecipe.get({ plain: true });
-      res.render('recipe', recipe);
-    } catch (err) {
-        res.status(500).json(err);
-    };     
+router.get('/:id', async (req, res) => {
+  // Pull a single recipe by id
+  try {
+    const singleRecipe = await Recipe.findByPk(req.params.id, {
+      include: [{ model: User }],
+    });
+    res.json(singleRecipe);
+  } catch (err) {
+    res.status(500).json(err.message);
+  }
 });
 
 router.post('/', async (req, res) => {
@@ -40,7 +35,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.delete('/recipes/:id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
   // delete recipe by id
   try {
     const removeRecipe = await Recipe.destroy({ where: { id: req.params.id } });

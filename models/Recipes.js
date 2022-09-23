@@ -23,24 +23,13 @@ Recipes.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    ingredients : {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
     description: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
-    user_id: {
-      type: DataTypes.INTEGER,
-      allownull: false,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
-    },
-    ingredient_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'ingredients',
-        key: 'id',
-      },
     },
   },
   {

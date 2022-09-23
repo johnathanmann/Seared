@@ -4,10 +4,10 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // Initialize Product model (table) by extending off Sequelize's Model class
-class Ingredients extends Model {}
+class Units extends Model {}
 
-// set up fields and rules for Ingredients model
-Ingredients.init(
+// set up fields and rules for Units model
+Units.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -15,17 +15,9 @@ Ingredients.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    recipe_id: {
+    title: {
       type: DataTypes.STRING,
-      allowNull: true,
-    },
-    amount: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    unit_id: {
-      type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
   },
   {
@@ -33,8 +25,8 @@ Ingredients.init(
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'ingredients',
+    modelName: 'units',
   }
 );
 
-module.exports = Ingredients;
+module.exports = Units;

@@ -1,0 +1,59 @@
+<!-- Local stylesheet -->
+    <link rel="stylesheet" href="/assets/css/recipe.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <h1 class="display-2 animate__animated animate__fadeInLeft"><a class="nav-link" href="/">SEARED</a></h1>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            {{#if logged_in}}
+          <li class="nav-item active">
+            <a class="nav-link" id="logout">Log Out <span class="sr-only"></span></a>
+          </li>
+          {{/if}}
+          <li class="nav-item active">
+            <a class="nav-link" href="/login">Login <span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/sign-up">Sign Up <span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Random Recipe <span class="sr-only"></span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    </header>
+    <main>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col d-flex justify-content-center">
+        <div class="card">
+          <div class="card-body">
+            <h1 class="card-title">{{recipes.recipe_name}}</h1>
+            <h3>Ingredients</h3>
+            <ul class="card-list">
+                {{#each recipe. as |user| }}
+              <li>ingredient</li>
+              <li>ingredient</li>
+              <li>ingredient</li>
+              <li>ingredient</li>
+              <li>ingredient</li>
+              <li>ingredient</li>
+            </ul>
+            <h3>Recipe</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <button class="btn" type="submit">Review <i class="fa-solid fa-comments"></i></button>
+          </div>
+          </div>
+          </div>
+          </div>
+        </div>
+        <div class="container-fluid">
+          
+          </div>
+    </main>

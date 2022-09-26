@@ -16,7 +16,7 @@ Ingredients.init(
       autoIncrement: true,
     },
     ingredient: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: true,
     },
     recipe_id: {

@@ -15,22 +15,26 @@ Ingredients.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    ingredient: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
     recipe_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
     amount: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
     unit_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
   },
   {
     sequelize,
-    timestamps: true,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'ingredients',

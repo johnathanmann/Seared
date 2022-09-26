@@ -23,29 +23,18 @@ Recipes.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    description: {
-      type: DataTypes.STRING,
+    ingredients : {
+      type: DataTypes.TEXT,
       allowNull: false,
     },
-    user_id: {
-      type: DataTypes.INTEGER,
-      allownull: false,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
-    },
-    ingredient_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'ingredients',
-        key: 'id',
-      },
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: false,
     },
   },
   {
     sequelize,
-    timestamps: true,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'recipes',

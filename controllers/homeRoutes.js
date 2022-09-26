@@ -1,6 +1,21 @@
+const { Recipes } = require('../models');
+
 const router = require('express').Router();
 // const { User } = require('../models');
 // const withAuth = require('../utils/auth');
+
+router.get('/recipe', async (req, res) => {
+  try {
+    const dbRecipes = await Recipes.findAll({});
+
+    const recipes = dbRecipes.map((recipe) => recipe.get({ plain: true }));
+    res.render('recipe', {
+      recipes,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 router.get('/', async (_req, res) => {
   try {

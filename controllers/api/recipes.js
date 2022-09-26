@@ -1,12 +1,9 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { Recipes, User } = require('../../models');
 
 router.get('/', async (req, res) => {
-  // pull all recipes
   try {
-    const allRecipes = await Recipes.findAll({
-      include: [{ model: User }],
-    });
+    const allRecipes = await Recipes.findAll()
     res.json(allRecipes);
   } catch (err) {
     res.status(500).json(err.message);
@@ -16,12 +13,16 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   // Pull a single recipe by id
   try {
-    const singleRecipe = await Recipe.findByPk(req.params.id, {
-      include: [{ model: User }],
-    });
-    res.json(singleRecipe);
+    const recipeId = await Recipes.findByPk(req.params.id);
+ // If the product data cant be found the user will be let known
+    if (!recipeId) {
+      res.status(404).json({ message: 'No recipe found with that id!' });
+      return;
+    }
+
+    res.status(200).json(recipeId);
   } catch (err) {
-    res.status(500).json(err.message);
+    res.status(500).json(err);
   }
 });
 

@@ -25,7 +25,6 @@ const seedDatabase = async () => {
   console.info('Recipes Seeded:', recipes);
   console.info('Comments Seeded:', comments);
 
-  process.exit(0);
 };
 
-seedDatabase();
+module.exports = seedDatabase;

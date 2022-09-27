@@ -27,6 +27,14 @@ Comments.init(
         key: 'id',
       },
     },
+    recipe_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+          model: 'recipes',
+          key: 'id'
+      }
+  }
   },
   {
     sequelize,

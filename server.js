@@ -7,7 +7,6 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
-const seeds = require('./seeds/seed')
 
 const sequelize = require('./config/connection');
 const seedDatabase = require('./seeds/seed');

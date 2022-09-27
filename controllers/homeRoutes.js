@@ -29,7 +29,7 @@ router.get('/recipe/random', async (req, res) => {
         include: [
           {
             model: Comments,
-            attributes: ['id', 'comment_text'],
+            attributes: ['comment_text'],
           },
         ],
       }

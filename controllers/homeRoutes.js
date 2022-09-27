@@ -17,7 +17,7 @@ router.get('/recipe', async (req, res) => {
   }
 });
 
-router.get('/', async (req, res) => {
+router.get('/comments', async (req, res) => {
   try {
     const dbComments = await Comments.findAll({ raw: true });
     console.log(dbComments);

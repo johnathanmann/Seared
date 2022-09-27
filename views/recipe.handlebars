@@ -20,7 +20,7 @@
             <a class="nav-link" href="/sign-up">Sign Up <span class="sr-only"></span></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">Random Recipe <span class="sr-only"></span></a>
+            <a class="nav-link" href="/recipe/random">Random Recipe <span class="sr-only"></span></a>
           </li>
         </ul>
       </div>
@@ -32,19 +32,11 @@
           <div class="col d-flex justify-content-center">
         <div class="card">
           <div class="card-body">
-            <h1 class="card-title">Title</h1>
+            <h1 class="card-title">{{title}}</h1>
             <h3>Ingredients</h3>
-            <ul class="card-list">
-              
-              <li>ingredient</li>
-              <li>ingredient</li>
-              <li>ingredient</li>
-              <li>ingredient</li>
-              <li>ingredient</li>
-              <li>ingredient</li>
-            </ul>
+            <p>{{ingredients}}</p>
             <h3>Recipe</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>{{description}}</p>
             <form>
               <div class="form-group">
               <label for="review">Your Review:</label><br>

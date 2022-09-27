@@ -1,5 +1,7 @@
 const router = require('express').Router();
-const { Recipes, User } = require('../../models');
+const { Recipes } = require('../../models');
+
+
 
 router.get('/', async (req, res) => {
   try {
@@ -13,9 +15,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   // Pull a single recipe by id
   try {
-    const singleRecipe = await Recipes.findByPk(req.params.id, {
-      include: [{ model: User }],
-    });
+    const singleRecipe = await Recipes.findByPk(req.params.id);
     res.json(singleRecipe);
   } catch (err) {
     res.status(500).json(err);

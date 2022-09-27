@@ -7,7 +7,10 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
+<<<<<<< HEAD
+=======
 const seedDatabase = require('./seeds/seed');
+>>>>>>> fb1fe54c35bbb068c68f51181fe8a4b670cf0d80
 
 const sequelize = require('./config/connection');
 const seedDatabase = require('./seeds/seed');
@@ -32,8 +35,8 @@ const sess = {
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
-    db: sequelize
-  })
+    db: sequelize,
+  }),
 };
 
 app.use(session(sess));
@@ -44,7 +47,7 @@ app.set('view engine', 'handlebars');
 
 app.use(
   helmet({
-    contentSecurityPolicy: false
+    contentSecurityPolicy: false,
   })
 );
 app.use(morgan('tiny'));
@@ -55,10 +58,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 sequelize.sync({ force: !IS_PROD }).then(() => {
-  if(!IS_PROD){
+  if (!IS_PROD) {
     seedDatabase();
   }
   app.listen(PORT, () => console.log(`Now listening on port: ${PORT}`));
 });
-
-

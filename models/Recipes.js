@@ -30,7 +30,7 @@ Recipes.init(
     description: {
       type: DataTypes.TEXT,
       allowNull: false,
-    }
+    },
   },
   {
     sequelize,

@@ -42,7 +42,6 @@ router.post('/login', async (req, res) => {
       // CHANGE THIS REDIRECT TO WHERE YOU WANT THE USER TO GO
       res.status(200).redirect('/logged_in_homepage');
     });
-
   } catch (err) {
     res.status(400).json(err);
   }

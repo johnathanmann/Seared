@@ -31,10 +31,10 @@ Comments.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-          model: 'recipes',
-          key: 'id'
-      }
-  }
+        model: 'recipes',
+        key: 'id',
+      },
+    },
   },
   {
     sequelize,

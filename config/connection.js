@@ -13,7 +13,7 @@ if (process.env.JAWSDB_URL) {
     {
       host: process.env.DB_HOST,
       dialect: process.env.DB_DIALECT,
-      port: parseInt(process.env.DB_PORT)
+      port: parseInt(process.env.DB_PORT),
     }
   );
 }

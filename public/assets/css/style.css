@@ -116,6 +116,8 @@ main p{
 .grow { transition: all .2s ease-in-out; }
 .grow:hover { transform: scale(1.1); }
 
+
+
 @media (max-width: 570px){
 .jumbotron{
     background-image: linear-gradient(to right, #181313, #18131300), url(/assets/img/mobile-header.jpg);

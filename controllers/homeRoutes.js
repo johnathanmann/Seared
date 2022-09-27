@@ -7,10 +7,9 @@ const router = require('express').Router();
 router.get('/recipe', async (req, res) => {
   try {
     const dbRecipes = await Recipes.findAll({});
-
-    const recipes = dbRecipes.map((recipe) => recipe.get({ plain: true }));
+    console.log(dbRecipes);
     res.render('recipe', {
-      recipes,
+      dbRecipes,
     });
   } catch (err) {
     res.status(500).json(err);

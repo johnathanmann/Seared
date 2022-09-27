@@ -20,7 +20,6 @@ router.get('/recipe', async (req, res) => {
 // Finds random Recipe
 
 router.get('/recipe/random', async (req, res) => {
-
   try {
     console.log(req.params);
     // Gets recipe by number 1-5

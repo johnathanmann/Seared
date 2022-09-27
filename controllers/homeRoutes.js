@@ -1,4 +1,5 @@
 const { Recipes } = require('../models');
+const { Comments } = require('../models');
 
 const router = require('express').Router();
 // const { User } = require('../models');
@@ -10,6 +11,18 @@ router.get('/recipe', async (req, res) => {
     console.log(dbRecipes);
     res.render('recipe', {
       dbRecipes,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/', async (req, res) => {
+  try {
+    const dbComments = await Comments.findAll({ raw: true });
+    console.log(dbComments);
+    res.render('comment', {
+      dbComments,
     });
   } catch (err) {
     res.status(500).json(err);

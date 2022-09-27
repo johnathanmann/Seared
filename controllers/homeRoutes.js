@@ -1,4 +1,5 @@
 const { Recipes } = require('../models');
+const { Comments } = require('../models');
 
 const router = require('express').Router();
 // const { User } = require('../models');
@@ -16,8 +17,29 @@ router.get('/recipe', async (req, res) => {
   }
 });
 
-router.get('/recipe/:id',  (req, res) => {
-  return res.render('recipe', Recipes[req.params.id]);
+// Finds random Recipe
+router.get('/recipe/random',async  (req, res) => {
+  try {
+    console.log(req.params);
+    // Gets recipe by number 1-5
+    const singleRecipe = await Recipes.findByPk(parseInt(Math.floor(Math.random() * 5) + 1), {raw: true});
+    console.log(singleRecipe);
+    res.render('recipe', singleRecipe);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/comments', async (req, res) => {
+  try {
+    const dbComments = await Comments.findAll({ raw: true });
+    console.log(dbComments);
+    res.render('comment', {
+      dbComments,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 router.get('/', async (_req, res) => {

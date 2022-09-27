@@ -16,6 +16,10 @@ router.get('/recipe', async (req, res) => {
   }
 });
 
+router.get('/recipe/:id',  (req, res) => {
+  return res.render('recipe', Recipes[req.params.id]);
+});
+
 router.get('/', async (_req, res) => {
   try {
     // Change this to where you app should go

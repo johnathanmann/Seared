@@ -18,13 +18,23 @@ router.get('/recipe', async (req, res) => {
 });
 
 // Finds random Recipe
+
 router.get('/recipe/random', async (req, res) => {
+
   try {
     console.log(req.params);
     // Gets recipe by number 1-5
     const singleRecipe = await Recipes.findByPk(
       parseInt(Math.floor(Math.random() * 5) + 1),
-      { raw: true }
+      { raw: true },
+      {
+        include: [
+          {
+            model: Comments,
+            attributes: ['id', 'comment_text'],
+          },
+        ],
+      }
     );
     console.log(singleRecipe);
     res.render('recipe', singleRecipe);

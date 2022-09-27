@@ -1,0 +1,166 @@
+:root{
+    --black: #181313;
+    --white: #e4e1e1;
+    --light: #be1000;
+    font-family: 'Roboto', sans-serif;
+}
+
+a:hover, a:active{
+    text-decoration: none;
+    color: var(--white);
+}
+
+body{
+    background-color: var(--black);
+    overflow-x: hidden;
+}
+
+.container-fluid{
+    padding: 0;
+}
+
+.jumbotron{
+    background-image: linear-gradient(to right, #181313,#181313e3, #18131300), url(/assets/img/desktop-header.jpg);
+    color: var(--white);
+    padding: 20px;
+    background-repeat: no-repeat;
+    height: 90vh;
+    background-position: right;
+    margin: 0;
+    background-size: cover;
+}
+
+.jumbotron h1{
+    font-weight: 500;
+    font-style: italic;
+    padding-left: 50px;
+}
+
+.jumbotron li{
+    font-weight: 400;
+    font-style: italic;
+    font-size: x-large;
+}
+
+.jumbotron h2{
+    font-weight: 300;
+    padding-left: 50px;
+    font-style: italic;
+}
+
+.fa-dice{
+    font-size: 70px;
+}
+
+#random-card{
+    margin: 50px;
+    padding: 20px;
+    background-color: var(--light);
+    border-radius: 139px;
+    color: var(--white);
+    width: 18rem;
+}
+
+#random-card h4{
+    margin: 10px 0px;
+}
+
+main h1{
+    color: var(--light);
+    font-weight: 500;
+    font-style: italic;
+    margin-top: 15px;
+}
+
+main p{
+    color: var(--white);
+    margin: 30px 100px 60px 100px;
+    font-size: x-large;
+}
+
+#footer{
+    background-color: var(--light);
+    color: var(--white);
+}
+
+#footer h1{
+    margin: 20px 0px 0px 80px;
+    font-weight: 500;
+    font-style: italic;
+}
+
+#footer h5{
+    margin: 10px 50px 0px 80px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+#footer-links .col{
+    margin-top: 20px;
+    padding: 0px;
+}
+
+#footer-links a{
+    color: var(--white);
+    font-size: x-large;
+}
+
+#footer-links{
+    padding: 0px;
+}
+
+#footer-links i{
+    margin: 20px 10px;
+}
+
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.1); }
+
+@media (max-width: 570px){
+.jumbotron{
+    background-image: linear-gradient(to right, #181313, #18131300), url(/assets/img/mobile-header.jpg);
+    height: 50vh;
+}
+.jumbotron h1{
+    padding-left: 0;
+    font-size: xx-large;
+}
+.jumbotron h2{
+    padding-left: 15px;
+    font-size: xx-large;
+}
+#slogan{
+    display: inline-flex;
+}
+#random-card{
+    width: 16rem;
+}
+.fa-dice{
+    font-size: 40px;
+}
+#footer h1{
+    margin: 20px;
+}
+#footer h5{
+    margin: 20px;
+}
+#footer-links a{
+    font-size: medium;
+}
+}
+
+@media (max-width: 426px){
+    main p{
+        margin: 15px 10px 20px 10px;
+        font-size: medium;
+    }
+    #random-card{
+        width: 15rem;
+    }
+    #footer h1{
+        margin: 10px;
+    }
+    #footer h5{
+        margin: 10px;
+    }
+  }

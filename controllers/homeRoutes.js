@@ -6,7 +6,7 @@ const router = require('express').Router();
 
 router.get('/recipe', async (req, res) => {
   try {
-    const dbRecipes = await Recipes.findAll({});
+    const dbRecipes = await Recipes.findAll({ raw: true });
     console.log(dbRecipes);
     res.render('recipe', {
       dbRecipes,

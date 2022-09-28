@@ -3,9 +3,9 @@ const recipe_id = document.querySelector('input[name="recipe_id"]').value;
 
 const commentForm = async (event) => {
   event.preventDefault();
-// Get comment text
+  // Get comment text
   const comment_text = document.querySelector('input[name="comment"]').value;
-// Post commen to database so we can show it on the site
+  // Post commen to database so we can show it on the site
   if (comment_text) {
     const response = await fetch('/api/comments', {
       method: 'POST',

@@ -1,22 +1,37 @@
 [
   {
-    "comment_text": "comment text test 1",
+    "comment_text": "This recipe is AWESOME!",
     "user_id": 1,
     "recipe_id": 1
   },
   {
-    "comment_text": "comment text test 2",
+    "comment_text": "Quick and yummy!",
     "user_id": 2,
     "recipe_id": 2
   },
   {
-    "comment_text": "comment text test 3",
+    "comment_text": "Who'd a thought that pineapple and beer would go together!?",
     "user_id": 1,
     "recipe_id": 3
   },
   {
-    "comment_text": "comment text test 4",
+    "comment_text": "Sounded great!  Was okay. Won't try again.",
     "user_id": 3,
     "recipe_id": 4
+  },
+  {
+    "comment_text": "Our family loved this.  Added more dill for taste.",
+    "user_id": 3,
+    "recipe_id": 4
+  },
+  {
+    "comment_text": "A new favorite!",
+    "user_id": 3,
+    "recipe_id": 5
+  },
+  {
+    "comment_text": "Just amazing!",
+    "user_id": 3,
+    "recipe_id": 1
   }
 ]

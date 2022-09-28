@@ -36,7 +36,10 @@ router.get('/recipe/random', async (req, res) => {
     });
     const recipe = singleRecipe.get({ plain: true });
     console.log(recipe);
-    res.render('recipe', recipe);
+    res.render('recipe', {
+      ...recipe,
+      logged_in: req.session.logged_in,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -54,10 +57,12 @@ router.get('/comments', async (req, res) => {
   }
 });
 
-router.get('/', async (_req, res) => {
+router.get('/', async (req, res) => {
   try {
     // Change this to where you app should go
-    res.render('homepage');
+    res.render('homepage', {
+      logged_in: req.session.logged_in,
+    });
   } catch (err) {
     res.status(500).json(err);
   }

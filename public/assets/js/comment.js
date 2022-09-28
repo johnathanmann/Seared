@@ -1,13 +1,11 @@
+// Get recipe id from the handlebar rendered html
 const recipe_id = document.querySelector('input[name="recipe_id"]').value;
-
-console.log(recipe_id);
 
 const commentForm = async (event) => {
   event.preventDefault();
-
+  // Get comment text
   const comment_text = document.querySelector('input[name="comment"]').value;
-  console.log(comment_text);
-
+  // Post commen to database so we can show it on the site
   if (comment_text) {
     const response = await fetch('/api/comments', {
       method: 'POST',

@@ -14,17 +14,20 @@
           
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ml-auto">
+                {{#if logged_in}}
                 <li class="nav-item active">
                   <a class="nav-link" href="#">Log Out <span class="sr-only"></span></a>
                 </li>
+                {{else}}
                 <li class="nav-item active">
                   <a class="nav-link" href="/login">Login <span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item active">
                   <a class="nav-link" href="/sign-up">Sign Up <span class="sr-only"></span></a>
                 </li>
+                {{/if}}
                 <li class="nav-item active">
-                  <a class="nav-link" href="/recipe">Random Recipe <span class="sr-only"></span></a>
+                  <a class="nav-link" href="/recipe/random">Random Recipe <span class="sr-only"></span></a>
                 </li>
               </ul>
             </div>

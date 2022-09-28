@@ -31,10 +31,6 @@ Recipes.init(
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    comment_id: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-    },
   },
   {
     sequelize,

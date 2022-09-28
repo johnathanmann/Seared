@@ -2,23 +2,8 @@ const { Recipes } = require('../models');
 const { Comments } = require('../models');
 
 const router = require('express').Router();
-// const { User } = require('../models');
-// const withAuth = require('../utils/auth');
-
-router.get('/recipe', async (req, res) => {
-  try {
-    const dbRecipes = await Recipes.findAll({ raw: true });
-    console.log(dbRecipes);
-    res.render('recipe', {
-      dbRecipes,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
 
 // Finds random Recipe
-
 router.get('/recipe/random', async (req, res) => {
   try {
     // Gets recipe by number 1-5
@@ -39,18 +24,6 @@ router.get('/recipe/random', async (req, res) => {
     res.render('recipe', {
       ...recipe,
       logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-router.get('/comments', async (req, res) => {
-  try {
-    const dbComments = await Comments.findAll({ raw: true });
-    console.log(dbComments);
-    res.render('comment', {
-      dbComments,
     });
   } catch (err) {
     res.status(500).json(err);

@@ -50,7 +50,7 @@
               <input class="form-input" type="text" id="review" name="comment" />
             </div>
             <div class="form-group">
-              <button class="btn" id="submit-btn"type="submit">Review <i class="fa-solid fa-comments"></i></button>
+              <button class="btn grow" id="submit-btn"type="submit">Review <i class="fa-solid fa-comments"></i></button>
             </div>
             </form>
             {{/if}}
@@ -66,6 +66,20 @@
           {{/each}}
           </div>
     </main>
+    <footer>
+      <div class="container-fluid" id="footer">
+        <div class="row">
+          <div class="col-md-6">
+            <h1 class="display-4">SEARED</h1>
+            <h5>Good food. Good people.</h5>
+          </div>
+          <div class="col-md-6" id="footer-links">
+            <a href="https://github.com/johnathanmann" target="_blank"><i class="fa-brands fa-square-github"></i>Johnathan Mann</a> <br>
+             <a href="https://github.com/tierney9" target="_blank"><i class="fa-brands fa-square-github"></i>Matthew Tierney</a> <br>
+             <a href="https://github.com/SteveWeed79" target="_blank"><i class="fa-brands fa-square-github"></i>Steve Weed</a> <br>
+          </div>
+        </div>
+    </footer>
   
 {{#if logged_in}}
 <script src="/assets/js/logout.js"></script>

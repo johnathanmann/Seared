@@ -63,6 +63,8 @@
           {{/each}}
           </div>
     </main>
-
-  <script src="/assets/js/comment.js"></script>
-
+  
+{{#if logged_in}}
+<script src="/assets/js/logout.js"></script>
+<script src="/assets/js/comment.js"></script>
+{{/if}}

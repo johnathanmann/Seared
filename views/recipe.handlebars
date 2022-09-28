@@ -38,15 +38,19 @@
             <p>{{ingredients}}</p>
             <h3>Recipe</h3>
             <p>{{description}}</p>
-            <form>
+            <input type="hidden" name="recipe_id" value="{{id}}">
+            {{#if logged_in}}
+            
+            <form id="comment_form">
               <div class="form-group">
               <label for="review">Your Review:</label><br>
-              <input class="form-input" type="text" id="review" />
+              <input class="form-input" type="text" id="review" name="comment" />
             </div>
             <div class="form-group">
-              <button class="btn" type="submit">Review <i class="fa-solid fa-comments"></i></button>
+              <button class="btn" id="submit-btn"type="submit">Review <i class="fa-solid fa-comments"></i></button>
             </div>
             </form>
+            {{/if}}
           </div>
           </div>
           </div>
@@ -59,3 +63,8 @@
           {{/each}}
           </div>
     </main>
+  
+{{#if logged_in}}
+<script src="/assets/js/logout.js"></script>
+<script src="/assets/js/comment.js"></script>
+{{/if}}

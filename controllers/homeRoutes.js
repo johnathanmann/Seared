@@ -21,7 +21,6 @@ router.get('/recipe', async (req, res) => {
 
 router.get('/recipe/random', async (req, res) => {
   try {
-    console.log(req.params);
     // Gets recipe by number 1-5
     const singleRecipe = await Recipes.findByPk(
       parseInt(Math.floor(Math.random() * 5) + 1),
@@ -77,7 +76,7 @@ router.get('/sign-up', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     // CHANGE THIS TO WHEREVER YOUR PROJECT NEEDS TO GO
-    res.redirect('/logged_in_hompage');
+    res.redirect('/');
     return;
   }
   res.render('signup');

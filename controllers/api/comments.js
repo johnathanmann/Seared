@@ -1,11 +1,9 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { Comments } = require('../../models');
 
 router.get('/', async (req, res) => {
   try {
-    const allComments = await Comment.findAll({
-      include: [{ model: User }],
-    });
+    const allComments = await Comments.findAll({});
     res.json(allComments);
   } catch (err) {
     res.status(500).json(err.message);
@@ -14,9 +12,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
   try {
-    const singleComment = await Comment.findByPk(req.params.id, {
-      include: [{ model: User }],
-    });
+    const singleComment = await Comments.findByPk(req.params.id, {});
     res.json(singleComment);
   } catch (err) {
     res.status(500).json(err.message);
@@ -34,7 +30,7 @@ router.post('/', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   try {
-    const removeComment = await Comment.destroy({
+    const removeComment = await Comments.destroy({
       where: { id: req.params.id },
     });
     res.json(removeComment);

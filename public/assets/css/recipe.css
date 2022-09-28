@@ -94,3 +94,17 @@ label{
     color: var(--light);
 }
 
+@media (max-width: 820px){
+    .card{
+        width: 90vw;
+    }
+}
+
+
+@media (max-width: 580px){
+
+    .navbar h1{
+        font-size: xx-large;
+        padding-left: 25px;
+    }
+}

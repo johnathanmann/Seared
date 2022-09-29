@@ -21,7 +21,13 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-  // create a new recipe
+  // create a new recipe using the following format
+  //   {
+  //   "title": "Enter the Name of the recipe here",
+  //   "time": Enter cook time as minutes as integer,
+  //   "ingredients": "Enter the full list of ingredients as a text string.  Make sure to enter units needed per item",
+  //   "description": "Enter the cooking instructions here as a text string"
+  // }
   try {
     const createRecipe = await Recipes.create(req.body);
     res.json(createRecipe);

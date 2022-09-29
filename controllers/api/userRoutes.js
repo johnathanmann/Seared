@@ -1,6 +1,15 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+router.get('/', async (req, res) => {
+  try {
+    const allComments = await User.findAll({});
+    res.json(allComments);
+  } catch (err) {
+    res.status(500).json(err.message);
+  }
+});
+
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
@@ -40,7 +49,7 @@ router.post('/login', async (req, res) => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
       // CHANGE THIS REDIRECT TO WHERE YOU WANT THE USER TO GO
-      res.status(200).redirect('/logged_in_homepage');
+      res.status(200).redirect('/');
     });
   } catch (err) {
     res.status(400).json(err);

@@ -10,15 +10,18 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
+          {{#if logged_in}}
           <li class="nav-item active">
             <a class="nav-link" id="logout">Log Out <span class="sr-only"></span></a>
           </li>
+          {{else}}
           <li class="nav-item active">
             <a class="nav-link" href="/login">Login <span class="sr-only"></span></a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="/sign-up">Sign Up <span class="sr-only"></span></a>
           </li>
+          {{/if}}
           <li class="nav-item active">
             <a class="nav-link" href="/recipe/random">Random Recipe <span class="sr-only"></span></a>
           </li>
@@ -38,24 +41,53 @@
             <p>{{ingredients}}</p>
             <h3>Recipe</h3>
             <p>{{description}}</p>
-            <form>
+            <input type="hidden" name="recipe_id" value="{{id}}">
+            {{#if logged_in}}
+            
+            <form id="comment_form">
               <div class="form-group">
               <label for="review">Your Review:</label><br>
-              <input class="form-input" type="text" id="review" />
+              <input class="form-input" type="text" id="review" name="comment" />
             </div>
             <div class="form-group">
-              <button class="btn" type="submit">Review <i class="fa-solid fa-comments"></i></button>
+              <button class="btn grow" id="submit-btn"type="submit">Review <i class="fa-solid fa-comments"></i></button>
             </div>
             </form>
+            {{/if}}
           </div>
           </div>
           </div>
           </div>
         </div>
         <div class="container-fluid">
-          {{#each recipes.comments as |comments|}}
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              <div class="card">
+                <div class="card-body">
+                <h1 class="card-title">Reviews:</h1>
+          </div></div></div></div>
+          {{#each comments as |comment|}}
           {{> comments}}
           </div>  
           {{/each}}
           </div>
     </main>
+    <footer>
+      <div class="container-fluid" id="footer">
+        <div class="row">
+          <div class="col-md-6">
+            <h1 class="display-4">SEARED</h1>
+            <h5>Good food. Good people.</h5>
+          </div>
+          <div class="col-md-6" id="footer-links">
+            <a href="https://github.com/johnathanmann" target="_blank"><i class="fa-brands fa-square-github"></i>Johnathan Mann</a> <br>
+             <a href="https://github.com/tierney9" target="_blank"><i class="fa-brands fa-square-github"></i>Matthew Tierney</a> <br>
+             <a href="https://github.com/SteveWeed79" target="_blank"><i class="fa-brands fa-square-github"></i>Steve Weed</a> <br>
+          </div>
+        </div>
+    </footer>
+  
+{{#if logged_in}}
+<script src="/assets/js/logout.js"></script>
+<script src="/assets/js/comment.js"></script>
+{{/if}}

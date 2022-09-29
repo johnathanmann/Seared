@@ -8,7 +8,6 @@ router.get('/recipe/random', async (req, res) => {
   try {
     // Gets recipe by number 1-5
     const dataRecipes = await Recipes.findAll({
-      raw: true,
       include: [
         {
           model: Comments,
@@ -16,10 +15,11 @@ router.get('/recipe/random', async (req, res) => {
         },
       ],
     });
-    const randomNumber = Math.floor(Math.random() * dataRecipes.length);
-    console.log(dataRecipes[randomNumber]);
+    const recipe = dataRecipes.map((recipe) => recipe.get({ plain: true }));
+    const randomNumber = Math.floor(Math.random() * recipe.length);
+    console.log(recipe[randomNumber]);
     res.render('recipe', {
-      ...dataRecipes[randomNumber],
+      ...recipe[randomNumber],
       logged_in: req.session.logged_in,
     });
   } catch (err) {

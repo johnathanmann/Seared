@@ -14,6 +14,7 @@ Seared is a web app designed to help with deciding what to eat for dinner.  This
 ## Installation
 
 No installation required just use this link
+https://seared-project-2.herokuapp.com/
 
 ## Usage
 
@@ -31,7 +32,7 @@ This app will help you and your family decide what's for dinner!   Simply click 
 
 MIT License
 
-Copyright (c) [2022] [johnathanmann]
+Copyright (c) [2022] [johnathanmann, Tierney7, SteveWeed79]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

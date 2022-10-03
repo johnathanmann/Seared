@@ -19,6 +19,18 @@ const commentForm = async (event) => {
     });
     if (response.ok) {
       console.log('Comment Posted');
+      var commentEl = document.getElementById('commentRecipe');
+      const html = `<div class="row">
+    <div class="col d-flex justify-content-center">
+          <div class="card">
+            <div class="card-body">
+              <h6>${comment_text}</h6>
+            </div>
+        </div>
+    </div>
+</div> `;
+      commentEl.innerHTML += html;
+      document.querySelector('input[name="comment"]').value = '';
     } else {
       alert(response.statusText);
     }

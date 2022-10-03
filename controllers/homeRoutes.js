@@ -7,11 +7,7 @@ const router = require('express').Router();
 router.get('/recipe/random', async (req, res) => {
   try {
     // Gets recipe by number 1-5
-    const randomNumber = Math.floor(Math.random() * 5) + 1;
-    const singleRecipe = await Recipes.findOne({
-      where: {
-        id: randomNumber,
-      },
+    const dataRecipes = await Recipes.findAll({
       include: [
         {
           model: Comments,
@@ -19,14 +15,15 @@ router.get('/recipe/random', async (req, res) => {
         },
       ],
     });
-    const recipe = singleRecipe.get({ plain: true });
-    console.log(recipe);
+    const recipe = dataRecipes.map((recipe) => recipe.get({ plain: true }));
+    const randomNumber = Math.floor(Math.random() * recipe.length);
+    console.log(recipe[randomNumber]);
     res.render('recipe', {
-      ...recipe,
+      ...recipe[randomNumber],
       logged_in: req.session.logged_in,
     });
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json(err.message);
   }
 });
 

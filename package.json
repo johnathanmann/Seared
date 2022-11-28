@@ -24,7 +24,7 @@
     "helmet": "^6.0.0",
     "morgan": "^1.10.0",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.23.2"
+    "sequelize": "^6.25.8"
   },
   "devDependencies": {
     "eslint": "^8.24.0",
